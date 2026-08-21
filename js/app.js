@@ -61,11 +61,17 @@ function submitReview() {
 
     })
     .then(response => response.text())
-    .then(data => {
+.then(data => {
 
-        console.log("Backend response:", data);
+    console.log("Backend response:", data);
 
-    })
+    const message =
+        document.getElementById("successMessage");
+
+    message.textContent =
+        "Review Submitted! Love you ❤️";
+
+})
     .catch(error => {
 
         console.error("Error sending review:", error);
