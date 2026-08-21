@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ffe8ed,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #f4e8ff,
+            transparent 40%
+        ),
+        #fff9fa;
+
+    color: #3d2930;
+    
+}
+
+.landing-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    animation: fadeIn 1.2s ease;
+}
+
+.heart {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    font-size: 30px;
+    color: #d96b83;
+
+    box-shadow: 0 10px 30px rgba(120, 70, 90, 0.12);
+
+    animation: heartbeat 2s infinite;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 4px;
+
+    color: #a27683;
+
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(48px, 8vw, 82px);
+
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: #c65f79;
+    font-style: italic;
+}
+
+.intro {
+    max-width: 500px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #79656c;
+
+    margin-bottom: 35px;
+}
+
+.begin-btn {
+    border: none;
+
+    padding: 16px 28px;
+
+    border-radius: 50px;
+
+    background: #c65f79;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 10px 25px rgba(198, 95, 121, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.begin-btn span {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.begin-btn:hover {
+    background: #b94f6b;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 30px rgba(198, 95, 121, 0.35);
+}
+
+.begin-btn:hover span {
+    transform: translateX(5px);
+}
+
+.footer-text {
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    color: #a28d94;
+}
+
+
+/* ---------- Animations ---------- */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.08);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+}

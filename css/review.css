@@ -1,0 +1,502 @@
+/* =========================
+   RESET
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ANIMATED BACKGROUND
+   ========================= */
+
+body {
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 210, 220, 0.7),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(225, 205, 255, 0.6),
+            transparent 30%
+        ),
+        #fff9fa;
+
+    color: #3d2930;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+   ========================= */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Individual hearts */
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    color: rgba(170, 55, 85, 0.45);
+
+    font-size: 25px;
+
+    animation: floatHeart 12s linear infinite;
+}
+
+
+/* Different heart positions */
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+    font-size: 22px;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 20%;
+    animation-delay: 3s;
+    font-size: 18px;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 35%;
+    animation-delay: 6s;
+    font-size: 30px;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 50%;
+    animation-delay: 2s;
+    font-size: 16px;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 65%;
+    animation-delay: 5s;
+    font-size: 25px;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 75%;
+    animation-delay: 8s;
+    font-size: 20px;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 88%;
+    animation-delay: 1s;
+    font-size: 28px;
+}
+
+.floating-hearts span:nth-child(8) {
+    left: 95%;
+    animation-delay: 7s;
+    font-size: 17px;
+}
+
+
+/* Heart animation */
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(-25px)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   REVIEW PAGE
+   ========================= */
+
+.review-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
+}
+
+
+/* =========================
+   MAIN CARD
+   ========================= */
+
+.review-container {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 720px;
+
+    padding: 55px 50px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 32px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 80px rgba(120, 70, 90, 0.12);
+
+    animation: cardAppear 0.8s ease;
+}
+
+
+/* Decorative hearts */
+
+.review-container::before {
+    content: "♥  ♡  ♥  ♡  ♥";
+
+    display: block;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: rgba(198, 95, 121, 0.35);
+
+    letter-spacing: 12px;
+
+    font-size: 13px;
+}
+
+
+/* Card entrance animation */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================
+   PROGRESS
+   ========================= */
+
+.progress {
+    text-align: right;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #a27683;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   HEADING
+   ========================= */
+
+.eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #a27683;
+
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 7vw, 65px);
+
+    font-weight: normal;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+h1 span {
+    color: #c65f79;
+
+    font-style: italic;
+}
+
+
+.subtitle {
+    color: #806c73;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   QUESTIONS
+   ========================= */
+
+.question {
+    margin-bottom: 40px;
+}
+
+
+.question label {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TEXTAREA
+   ========================= */
+
+textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    padding: 18px;
+
+    border: 1px solid #ead9de;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #3d2930;
+
+    outline: none;
+
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+textarea::placeholder {
+    color: #b7a5ab;
+}
+
+
+textarea:focus {
+    border-color: #c65f79;
+
+    box-shadow:
+        0 0 0 4px rgba(198, 95, 121, 0.08);
+}
+
+
+/* =========================
+   LOVE RATING
+   ========================= */
+
+.love-rating {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.love-rating button {
+    border: 1px solid #ead9de;
+
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 12px 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.love-rating button:hover {
+    transform: translateY(-3px);
+
+    border-color: #c65f79;
+
+    background: #fff5f7;
+}
+
+
+/* =========================
+   NEXT BUTTON
+   ========================= */
+
+.next-btn {
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: #c65f79;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(198, 95, 121, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.next-btn span {
+    margin-left: 10px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.next-btn:hover {
+    background: #b94f6b;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(198, 95, 121, 0.30);
+}
+
+
+.next-btn:hover span {
+    display: inline-block;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .review-page {
+        padding: 30px 15px;
+    }
+
+    .review-container {
+        padding: 40px 25px;
+
+        border-radius: 24px;
+    }
+
+    .progress {
+        margin-bottom: 35px;
+    }
+
+    .question label {
+        font-size: 21px;
+    }
+
+    .love-rating button {
+        padding: 10px 12px;
+    }
+
+}
